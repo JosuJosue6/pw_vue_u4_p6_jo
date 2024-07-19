@@ -1,7 +1,7 @@
 <template>
     <h1>Borrar estudiante</h1>
-    <Formulario />
-    <Boton />
+    <p type="Cedula"> <input placeholder="Cedula" type="text"> </p>  
+    <button> ingresar <\button>
     
 </template>
 

@@ -1,7 +1,7 @@
 <template>
     <h1>Registro Nuevo estudiante</h1>
     <Formulario />
-    <Boton />
+    <button> ingresar <\button>
     
 </template>
 

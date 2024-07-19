@@ -1,7 +1,8 @@
 <template>
     <h1>Actualizar estudiante</h1>
     <Formulario />
-    <Boton />
+    <button> Buscar <\button>
+    <button> Actualizar <\button>
     
 </template>
 
