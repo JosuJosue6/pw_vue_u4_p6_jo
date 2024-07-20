@@ -1,8 +1,7 @@
 <template>
     <h1>Actualizar estudiante</h1>
     <Formulario />
-    <button> Buscar <\button>
-    <button> Actualizar <\button>
+
     
 </template>
 
@@ -20,4 +19,7 @@ export default {
 
 </script>
 
-<style></style>
+<style>
+
+
+</style>
