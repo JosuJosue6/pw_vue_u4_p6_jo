@@ -11,10 +11,14 @@
                         <input v-model="cedula" placeholder="Cedula" type="text">
                     </p>
                     <p type="Nombre">
-                        <input placeholder="Nombre" type="text">
+                        <input v-model="nombre" placeholder="Nombre" type="text">
                     </p>
                     <p type="Apellido">
-                        <input placeholder="Apellido" type="text">
+                        <input v-model="apellido" placeholder="Apellido" type="text">
+                    </p>
+
+                    <p type="Genero">
+                        <input v-model="genero" placeholder="Genero" type="text">
                     </p>
                     <p>Fecha Nacimiento</p>
                     <p type="Fecha Nacimiento">
@@ -25,7 +29,7 @@
 
                 <div>
                     <button @click="consultar"> Buscar </button>
-                    <button> Actualizar </button>
+                    <button @click="actualizar"> Actualizar </button>
                 </div>
 
             </section>
@@ -37,13 +41,17 @@
 
 <script>
 
-import {obtenerPorCedulaAxiosFachada, actualizarFachada} from '../clients/clienteEstudiante.js'
+import {obtenerPorCedulaAxiosFachada,actualizarFachada} from '../clients/clienteEstudiante.js'
 
 export default {
 
     data() {
         return {
-            cedula: null
+            cedula: null,
+            nombre: null,
+            apellido: null,
+            fechaNacimiento: null,
+            genero:null
         }
     },
 
@@ -52,6 +60,22 @@ export default {
             console.log(this.cedula);
             const data = await obtenerPorCedulaAxiosFachada(this.cedula);
             console.log(data);
+            this.nombre = data.nombre;
+            this.apellido = data.apellido;
+            this.fechaNacimiento = data.fechaNacimiento;
+            this.genero = data.genero;
+        },
+
+        async actualizar(){
+
+            const bodyEstudiante = {
+                cedula: this.cedula,
+                nombre: this.nombre,
+                apellido: this.apellido,
+                fechaNacimiento: this.fechaNacimiento,
+                genero: this.genero
+            }
+            const data = await actualizarFachada(this.cedula,bodyEstudiante);
         }
     }
 }
