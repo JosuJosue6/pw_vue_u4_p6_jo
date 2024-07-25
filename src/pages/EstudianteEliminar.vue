@@ -1,20 +1,27 @@
 <template>
     <h1>Borrar estudiante</h1>
-    <p type="Cedula"> <input placeholder="Cedula" type="text"> </p>  
-    <button> ingresar </button>
+    <p type="Cedula"> <input v-model="cedula" placeholder="Cedula" type="text"> </p>  
+    <button @click="eliminar"> Eliminar </button>
     
 </template>
 
 <script>
-import Formulario from '../components/Formulario.vue'
-import Boton from '../components/Boton.vue'
+
+import {eliminarFachada} from '../clients/clienteEstudiante.js'
 
 export default {
 
-    components: {
-        Formulario,
-        Boton
-    }
+    data() {
+        return {
+            cedula: null
+        }
+    },
+    methods: {
+        async eliminar() {
+
+            const data = await eliminarFachada(this.cedula);
+        }
+    },
 }
 
 </script>

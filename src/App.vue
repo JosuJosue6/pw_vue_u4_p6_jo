@@ -1,16 +1,18 @@
 <template>
-  <EstudianteActualizar />
+  <EstudianteInsertar />
 </template>
 
 <script>
 import EstudianteActualizar from './pages/EstudianteActualizar.vue';
-//import EstudianteInsertar from './pages/EstudianteInsertar.vue'
-
+import EstudianteInsertar from './pages/EstudianteInsertar.vue'
+import EstudianteEliminar from './pages/EstudianteEliminar.vue'
 
 export default {
   name: 'App',
   components: {
-    EstudianteActualizar
+    //EstudianteActualizar,
+    EstudianteInsertar,
+    //EstudianteEliminar
   }
 }
 </script>
