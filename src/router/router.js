@@ -7,12 +7,13 @@ import EstudianteActualizar from '@/pages/EstudianteActualizar.vue'
 import EstudianteEliminar from '@/pages/EstudianteEliminar.vue'
 import EstudianteInsertar from '@/pages/EstudianteInsertar.vue'
 import BienvenidaPage from '@/pages/BienvenidaPage.vue'
+import NotFoundPage from '@/pages/NotFoundPage.vue'
 
 //Rutas
 const routes = [
     {
         //Nombro la ruta del path de mi pagina despues del :8080
-        path: '/estudianteActualizar',
+        path: '/estudianteActualizar/:cedula?edad=15',
         component: EstudianteActualizar
     },
     {
@@ -28,6 +29,11 @@ const routes = [
         path: '/',
         component: BienvenidaPage
 
+    },
+
+    {
+        path: '/:pathMatch(.*)*',
+        component: NotFoundPage
     }
 ]
 

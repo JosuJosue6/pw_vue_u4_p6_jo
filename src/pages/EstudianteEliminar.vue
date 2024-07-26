@@ -1,6 +1,6 @@
 <template>
     <h1>Borrar estudiante</h1>
-    <p type="Cedula"> <input v-model="cedula" placeholder="Cedula" type="text"> </p>  
+    <p type="Cedula"> <input v-model="cedula" placeholder="Cédula" type="text"> </p>  
     <button @click="eliminar"> Eliminar </button>
     
 </template>

@@ -8,7 +8,7 @@
             <section>
                 <form class="form">
                     <p type="Cedula">
-                        <input v-model="cedula" placeholder="Cedula" type="text">
+                        <input v-model="cedula" placeholder="Cédula" type="text">
                     </p>
                     <p type="Nombre">
                         <input v-model="nombre" placeholder="Nombre" type="text">

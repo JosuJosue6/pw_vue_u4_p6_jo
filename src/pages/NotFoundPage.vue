@@ -1,6 +1,6 @@
 <template>
-
-  <h1>Bienvenidos a la UCE</h1>
+  <h1>Page no Found</h1>
+  <h2>Asegurese de que la URL es correcta</h2>
 </template>
 
 <script>
