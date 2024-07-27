@@ -8,12 +8,13 @@ import EstudianteEliminar from '@/pages/EstudianteEliminar.vue'
 import EstudianteInsertar from '@/pages/EstudianteInsertar.vue'
 import BienvenidaPage from '@/pages/BienvenidaPage.vue'
 import NotFoundPage from '@/pages/NotFoundPage.vue'
+import BloqueadoPage from '@/pages/BloqueadoPage.vue'
 
 //Rutas
 const routes = [
     {
         //Nombro la ruta del path de mi pagina despues del :8080
-        path: '/estudianteActualizar/:cedula?edad=15',
+        path: '/estudianteActualizar/:cedula',
         component: EstudianteActualizar
     },
     {
@@ -21,7 +22,8 @@ const routes = [
         component: EstudianteEliminar
     },
     {
-        path: '/estudiantesInsertar',
+        path: '/estudiantesInsertar/:id',
+        name: 'prueba',
         component: EstudianteInsertar
 
     },
@@ -33,7 +35,13 @@ const routes = [
 
     {
         path: '/:pathMatch(.*)*',
-        component: NotFoundPage
+        component: NotFoundPage,
+    },
+
+    {
+        path: '/bloqueado',
+        name: 'blo',
+        component: BloqueadoPage
     }
 ]
 
@@ -41,6 +49,28 @@ const routes = [
 const router = createRouter({
     history: createWebHashHistory(),
     routes: routes,
+})
+
+//Programar los Guardianes
+router.beforeEach((to, from, next) => {
+    //
+
+    console.log("Guardianes .............................")
+    console.log(to);
+    console.log(from);
+    console.log(next);
+
+    let usuario = 'josue';
+    let resultado = false;
+    const random= Math.random()*100;
+
+    if (random > 50) {
+        console.log("Si tiene acceso a esa pagina");
+        next();
+    } else {
+        console.log("Acceso BLOQUEADO :C");
+        next({ name: "blo" })
+    }
 })
 
 export default router

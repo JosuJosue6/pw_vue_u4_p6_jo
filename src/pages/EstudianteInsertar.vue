@@ -69,6 +69,11 @@ export default {
             const data = await guardarFachada(bodyEstudiante);
         }
     },
+    created(){
+        console.log(this.$route);
+        let cedula =this.$route.params.cedula;
+        console.log(cedula)
+    }
 }
 
 </script>
