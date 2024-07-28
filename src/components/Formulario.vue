@@ -8,7 +8,7 @@
             <section>
                 <form class="form">
                     <p type="Cedula">
-                        <input v-model="cedula" placeholder="Cedula" type="text">
+                        <input v-model="cedula" placeholder="Cédula" type="text">
                     </p>
                     <p type="Nombre">
                         <input v-model="nombre" placeholder="Nombre" type="text">
@@ -76,6 +76,16 @@ export default {
                 genero: this.genero
             }
             const data = await actualizarFachada(this.cedula,bodyEstudiante);
+        }
+    },
+
+    created(){
+        console.log(this.$route);
+        let cedula =this.$route.params.cedula;
+        console.log(cedula)
+        if (cedula !== "vacio"){
+            this.cedula = cedula;
+            this.consultar();
         }
     }
 }
