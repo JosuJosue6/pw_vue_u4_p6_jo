@@ -1,5 +1,5 @@
 <template>
-  <EstudianteInsertar />
+  <EstudianteEliminar />
 </template>
 
 <script>
@@ -11,8 +11,8 @@ export default {
   name: 'App',
   components: {
     //EstudianteActualizar,
-    EstudianteInsertar,
-    //EstudianteEliminar
+    //EstudianteInsertar,
+    EstudianteEliminar
   }
 }
 </script>
